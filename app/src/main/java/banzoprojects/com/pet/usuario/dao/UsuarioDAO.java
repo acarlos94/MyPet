@@ -12,6 +12,7 @@ import banzoprojects.com.pet.usuario.dominio.Usuario;
 public class UsuarioDAO {
     private DbHelper helper;
 
+
     public UsuarioDAO(Context context){
         helper = new DbHelper(context);
     }
@@ -100,5 +101,7 @@ public class UsuarioDAO {
         usuario.setSenha(senha);
         return usuario;
     }
+
+
 
 }

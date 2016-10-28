@@ -27,19 +27,9 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUNA_PESO = "peso";
     public static final String COLUNA_ALTURA = "altura";
     public static final String COLUNA_TIPO = "tipo";
+    public static final String COLUNA_ID_USUARIO = "id_usuario";
 
 
-
-//    public static final String CRIAR_TABELA_ANIMAL = "CREATE TABLE " + TABELA_ANIMAL + "("
-//            + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-//            + COLUNA_NOME + " TEXT,"
-//            + COLUNA_RACA + " TEXT,"
-//            + COLUNA_SEXO + " TEXT,"
-//            + COLUNA_COR + " TEXT,"
-//            + COLUNA_NASCIMENTO + " DATE,"
-//            + COLUNA_PESO + " DECIMAL,"
-//            + COLUNA_ALTURA + " DECIMAL,"
-//            + COLUNA_TIPO + " TEXT);";
 
     public DbHelper(Context context) {
 
@@ -55,13 +45,23 @@ public class DbHelper extends SQLiteOpenHelper {
                 + COLUNA_SENHA + " TEXT);");
 
 
-        //db.execSQL(CRIAR_TABELA_ANIMAL);
+        db.execSQL("CREATE TABLE " + TABELA_ANIMAL + "("
+                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUNA_NOME + " TEXT,"
+                + COLUNA_RACA + " TEXT,"
+                + COLUNA_SEXO + " TEXT,"
+                + COLUNA_COR + " TEXT,"
+                + COLUNA_NASCIMENTO + " DATE,"
+                + COLUNA_PESO + " DOUBLE,"
+                + COLUNA_ALTURA + " DOUBLE,"
+                + COLUNA_TIPO + " TEXT,"
+                + COLUNA_ID_USUARIO + "INTEGER);");
 
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXIST " + TABELA_USUARIO);
-        //db.execSQL("DROP TABLE IF EXIST " + TABELA_ANIMAL);
+        db.execSQL("DROP TABLE IF EXIST " + TABELA_ANIMAL);
         onCreate(db);
 
     }
