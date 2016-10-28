@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/branco">
+
+<LinearLayout
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco"
+    android:weightSum="1"
+    android:orientation="vertical"
+    tools:context="banzoprojects.com.pet.usuario.gui.LoginActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:id="@+id/etEmail"
+        android:hint="Email"
+
+        android:layout_weight="0.13"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:id="@+id/etSenha"
+        android:layout_weight="0.12"
+        android:hint="Senha"
+
+        android:layout_below="@+id/etLogin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Logar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLogar"
+        android:layout_weight="0.09"
+        tools:text="Logar"
+        android:textSize="15sp"
+        android:layout_above="@+id/btnRegistro"
+        android:layout_alignRight="@+id/btnRegistro"
+        android:layout_alignEnd="@+id/btnRegistro"
+        android:layout_margin="15dp"
+        android:onClick="onButtonClick"/>
+
+    <TextView
+        android:text="Novo Cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvRegistrar"
+        android:layout_weight="0.09"
+        tools:text="Novo Cadastro"
+        android:onClick="onButtonClick"
+        android:textSize="18sp"
+        android:layout_margin="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+</LinearLayout>
+</ScrollView>

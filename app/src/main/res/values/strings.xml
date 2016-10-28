@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyPet</string>
+    <string name="nome_usuario">Negão</string>
+    <string name="error_email_vazio">Digite seu email</string>
+    <string name="error_senha_vazia">Digite sua senha</string>
+    <string name="email_invalido">Email inválido</string>
+    <string name="error_nome_vazio">Digite o nome</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="bem_vindo">Bem Vindo!</string>
+    <string name="error_espaco_branco">Não são permitidos espaços em branco</string>
+</resources>
