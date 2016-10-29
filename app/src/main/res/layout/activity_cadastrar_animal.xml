@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/branco">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_registro_animal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="banzoprojects.com.pet.animal.gui.CadastrarAnimalActivity">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nome"
+            android:ems="10"
+            android:id="@+id/etNomeAnimal"
+            android:layout_below="@+id/etNomeAnimal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Altura"
+            android:ems="10"
+            android:id="@+id/etAlturaAnimal"
+            android:layout_below="@+id/etSexoAnimal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Sexo"
+            android:ems="10"
+            android:id="@+id/etSexoAnimal"
+            android:layout_below="@+id/etRacaAnimal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="14dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Raça"
+            android:ems="10"
+            android:id="@+id/etRacaAnimal"
+            android:layout_below="@+id/etCorAnimal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="14dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Cor"
+            android:ems="10"
+            android:id="@+id/etCorAnimal"
+            android:layout_below="@+id/edtPesoAnimal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Peso"
+            android:ems="10"
+            android:id="@+id/etPesoAnimal"
+            android:layout_below="@+id/etNomeAnimal"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="17dp" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Tipo"
+            android:ems="10"
+            android:id="@+id/etTipo"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/editText8"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nascimento"
+            android:ems="10"
+            android:id="@+id/etNascimentoAnimal"
+            android:layout_marginTop="21dp"
+            android:layout_below="@+id/editText9"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCadastrarAnimal"
+            android:layout_weight="0.00"
+            tools:text="Cadastrar Animal"
+            android:onClick="onButtonClickUsuario"
+            android:textSize="13sp"
+            android:layout_marginTop="21dp"/>
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+

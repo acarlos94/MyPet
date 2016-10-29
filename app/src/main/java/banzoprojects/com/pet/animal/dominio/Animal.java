@@ -2,31 +2,24 @@ package banzoprojects.com.pet.animal.dominio;
 
 
 public class Animal {
-    private Integer _id;
+
+    private Long _id;
     private String nome;
     private String raca;
     private String sexo;
     private String cor;
     private String nascimento;
-    private Double peso;
-    private Double altura;
+    private String peso;
+    private String altura;
     private String tipo;
-    private Integer idusuario;
+    private String idUsuario;
 
-    public Animal(){}
-
-
-    public Integer getIdUsuario() {
-        return idusuario;
+    public Animal() {
     }
 
-    public void setIdUsuario(Integer idusuario) {
-        this.idusuario = idusuario;
-    }
 
-    public Animal(Integer id, String nome, String raca, String sexo, String cor, String nascimento,
-                  Double peso, Double altura, String tipo, Integer id_usuario) {
-
+    public Animal(Long id, String nome, String raca, String sexo, String cor, String nascimento,
+                  String peso, String altura, String tipo, String idUsuario) {
         this._id = id;
         this.nome = nome;
         this.raca = raca;
@@ -36,15 +29,14 @@ public class Animal {
         this.peso = peso;
         this.altura = altura;
         this.tipo = tipo;
-        this.idusuario = id_usuario;
+        this.idUsuario = idUsuario;
     }
 
-
-    public Integer get_id() {
+    public Long get_id() {
         return _id;
     }
 
-    public void set_id(Integer _id) {
+    public void set_id(Long _id) {
         this._id = _id;
     }
 
@@ -88,19 +80,19 @@ public class Animal {
         this.nascimento = nascimento;
     }
 
-    public Double getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public void setPeso(Double peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
 
-    public Double getAltura() {
+    public String getAltura() {
         return altura;
     }
 
-    public void setAltura(Double altura) {
+    public void setAltura(String altura) {
         this.altura = altura;
     }
 
@@ -110,5 +102,13 @@ public class Animal {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

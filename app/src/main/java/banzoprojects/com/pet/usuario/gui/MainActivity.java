@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         tvBemVindo = (TextView)findViewById(R.id.tvBemVindo);
         tvBemVindo.setText(usuarioLogado);
 
+
     }
     private void logout() {
         Usuario usuarioVazio = new Usuario();
@@ -49,4 +50,5 @@ public class MainActivity extends AppCompatActivity {
         finish();
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
+
 }

@@ -8,8 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".usuario.gui.LoginActivity">
+        <activity android:name=".usuario.gui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,15 +17,11 @@
         </activity>
         <activity
             android:name=".usuario.gui.RegistroActivity"
-            android:label="@string/cadastro"/>
+            android:label="@string/cadastro" />
         <activity
             android:name=".usuario.gui.MainActivity"
-            android:label="@string/bem_vindo">
-
-        </activity>
-
-
+            android:label="@string/bem_vindo"></activity>
+        <activity android:name=".animal.gui.CadastrarAnimalActivity"></activity>
     </application>
-
 
 </manifest>

@@ -94,13 +94,29 @@ public class UsuarioDAO {
         return usuario;
     }
 
-    public Usuario preencherDadosUsuario(String nome, String email, String senha) {
-        Usuario usuario = new Usuario();
-        usuario.setNome(nome);
-        usuario.setEmail(email);
-        usuario.setSenha(senha);
-        return usuario;
-    }
+//    public Usuario preencherDadosUsuario(String nome, String email, String senha) {
+//        Usuario usuario = new Usuario();
+//        usuario.setNome(nome);
+//        usuario.setEmail(email);
+//        usuario.setSenha(senha);
+//        return usuario;
+//    }
+//    public List<Usuario> lerUsuarioTudo() {
+//        List<Usuario> usuarios = new ArrayList<Usuario>;
+//        Cursor cursor = db.query(DB_TABELA, colunas, null, null, null, null, null);
+//        if  (cursor.moveToFirst()) {
+//            while(cursor.isAfterLast()) {
+//                Usuario usuario = new Usuario(cursor.getInt(0),
+//                        cursor.getString(1),
+//                        cursor.getString(2),
+//                        cursor.getString(3));
+//                usuarios.add(usuario);
+//                cursor.moveToNext();
+//            }
+//        }
+//        cursor.close();
+//        return usuarios;
+//    }
 
 
 
