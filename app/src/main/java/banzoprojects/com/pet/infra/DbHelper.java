@@ -6,14 +6,14 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DbHelper extends SQLiteOpenHelper {
+public class DbHelper extends SQLiteOpenHelper{
     public static final String TAG = DbHelper.class.getSimpleName();
     public static final String DB_NOME = "mypet.db";
     public static final int DB_VERSAO = 1;
 
     //atributos da tabela pessoa
     public static final String TABELA_USUARIO ="usuario";
-    public static final String COLUNA_ID = "_id";
+    public static final String COLUNA_ID= "_id";
     public static final String COLUNA_NOME = "nome";
     public static final String COLUNA_EMAIL = "email";
     public static final String COLUNA_SENHA = "senha";
@@ -27,7 +27,21 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUNA_PESO = "peso";
     public static final String COLUNA_ALTURA = "altura";
     public static final String COLUNA_TIPO = "tipo";
-    public static final String COLUNA_ID_USUARIO = "id_usuario";
+    public static final String USUARIO_ID = "_id_usuario";
+
+
+
+//       public static final String CREATE_EMPLOYEE_TABLE =
+//          "CREATE TABLE "
+//                + EMPLOYEE_TABLE + "(" + ID_COLUMN + " INTEGER PRIMARY KEY, "
+//                        + NAME_COLUMN + " TEXT, " + EMPLOYEE_SALARY + " DOUBLE, "
+//                        + EMPLOYEE_DOB + " DATE, " + EMPLOYEE_DEPARTMENT_ID + " INT, "
+//                        + "FOREIGN KEY(" + EMPLOYEE_DEPARTMENT_ID + ") REFERENCES "
+//                        + DEPARTMENT_TABLE + "(id) " + ")";
+//     
+//                public static final String CREATE_DEPARTMENT_TABLE = "CREATE TABLE "
+//                + DEPARTMENT_TABLE + "(" + ID_COLUMN + " INTEGER PRIMARY KEY,"
+//                        + NAME_COLUMN + ")";
 
 
 
@@ -38,15 +52,16 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABELA_USUARIO + "("
-                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + COLUNA_NOME + " TEXT,"
+        db.execSQL("CREATE TABLE "
+                + TABELA_USUARIO + " ("
+                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUNA_NOME + " TEXT, "
                 + COLUNA_EMAIL + " TEXT,"
                 + COLUNA_SENHA + " TEXT);");
 
-
-        db.execSQL("CREATE TABLE " + TABELA_ANIMAL + "("
-                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+        db.execSQL("CREATE TABLE "
+                + TABELA_ANIMAL + " ( "
+                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUNA_NOME + " TEXT,"
                 + COLUNA_RACA + " TEXT,"
                 + COLUNA_SEXO + " TEXT,"
@@ -55,7 +70,11 @@ public class DbHelper extends SQLiteOpenHelper {
                 + COLUNA_PESO + " DOUBLE,"
                 + COLUNA_ALTURA + " DOUBLE,"
                 + COLUNA_TIPO + " TEXT,"
-                + COLUNA_ID_USUARIO + "INTEGER);");
+                + USUARIO_ID + " INTEGER);");
+//                + " FOREIGN KEY(" + USUARIO_ID
+//                + " ) REFERENCES " + TABELA_USUARIO + " (" + COLUNA_ID
+//                + " ) ON DELETE RESTRICT ON UPDATE CASCADE);");
+
 
     }
     @Override
@@ -65,4 +84,5 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
+
 }

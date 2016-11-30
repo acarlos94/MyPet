@@ -12,10 +12,6 @@
     android:weightSum="1">
 
 
-
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,8 +24,15 @@
             android:layout_marginTop="10dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tvBemVindo"/>
+        <ListView
+            android:id="@+id/minhalista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnCadastrarAnimal"
+            android:layout_below="@+id/tvBemVindo">
+        </ListView>
         <Button
-            android:id="@+id/btnCadastrarBicho"
+            android:id="@+id/btnCadastrarAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastrar Animal"
@@ -47,7 +50,6 @@
 
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

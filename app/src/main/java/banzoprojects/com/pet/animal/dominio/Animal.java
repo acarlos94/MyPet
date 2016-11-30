@@ -12,14 +12,14 @@ public class Animal {
     private String peso;
     private String altura;
     private String tipo;
-    private String idUsuario;
+    private Long idUsuario;
 
     public Animal() {
     }
 
 
     public Animal(Long id, String nome, String raca, String sexo, String cor, String nascimento,
-                  String peso, String altura, String tipo, String idUsuario) {
+                  String peso, String altura, String tipo, Long idUsuario) {
         this._id = id;
         this.nome = nome;
         this.raca = raca;
@@ -33,6 +33,7 @@ public class Animal {
     }
 
     public Long get_id() {
+
         return _id;
     }
 
@@ -104,11 +105,11 @@ public class Animal {
         this.tipo = tipo;
     }
 
-    public String getIdUsuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(String idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 }

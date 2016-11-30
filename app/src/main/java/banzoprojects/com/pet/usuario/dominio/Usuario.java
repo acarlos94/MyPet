@@ -6,7 +6,7 @@ package banzoprojects.com.pet.usuario.dominio;
 
 
 public class Usuario {
-    private long _id;
+    private long _idUsuario;
     private String nome;
     private String email;
     private String senha;
@@ -15,19 +15,19 @@ public class Usuario {
 
     }
 
-    public Usuario(long id, String nome, String email, String senha){
-        this._id = id;
+    public Usuario(Long id, String nome, String email, String senha){
+        this._idUsuario = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
 
-    public long get_id() {
-        return _id;
+    public Long get_idUsuario() {
+        return _idUsuario;
     }
 
-    public void set_id(long _id) {
-        this._id = _id;
+    public void set_idUsuario(Long id) {
+        this._idUsuario = id;
     }
 
     public String getNome() {

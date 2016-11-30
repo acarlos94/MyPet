@@ -20,8 +20,10 @@
             android:label="@string/cadastro" />
         <activity
             android:name=".usuario.gui.MainActivity"
-            android:label="@string/bem_vindo"></activity>
-        <activity android:name=".animal.gui.CadastrarAnimalActivity"></activity>
+
+            android:label="@string/bem_vindo" />
+        <activity android:name=".animal.gui.CadastrarAnimalActivity" />
+        <activity android:name=".usuario.gui.Main2Activity"></activity>
     </application>
 
 </manifest>

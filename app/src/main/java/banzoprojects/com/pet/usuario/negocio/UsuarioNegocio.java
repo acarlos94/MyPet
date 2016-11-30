@@ -35,7 +35,7 @@ public class UsuarioNegocio {
 
         long idUsuario = usuarioDAO.inserir(usuario);
 
-        usuario.set_id(idUsuario);
+        usuario.set_idUsuario(idUsuario);
 
     }
 

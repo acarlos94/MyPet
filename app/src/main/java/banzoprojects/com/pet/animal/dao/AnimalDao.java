@@ -5,8 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.infra.DbHelper;
+import banzoprojects.com.pet.infra.Sessao;
 
 public class AnimalDAO {
     private DbHelper dbHelper;
@@ -28,7 +32,7 @@ public class AnimalDAO {
         values.put(dbHelper.COLUNA_PESO, animal.getPeso());
         values.put(dbHelper.COLUNA_ALTURA, animal.getAltura());
         values.put(dbHelper.COLUNA_TIPO, animal.getTipo());
-        values.put(dbHelper.COLUNA_ID_USUARIO, animal.getIdUsuario());
+        values.put(dbHelper.USUARIO_ID, Sessao.getUsuario().get_idUsuario());
 
         String tabela = DbHelper.TABELA_ANIMAL;
 
@@ -54,16 +58,40 @@ public class AnimalDAO {
 
     private Animal criarAnimal(Cursor cursor) {
         Animal animal = new Animal();
-        animal.set_id(cursor.getInt(0));
+        animal.set_id(cursor.getLong(0));
         animal.setNome(cursor.getString(1));
         animal.setRaca(cursor.getString(2));
         animal.setSexo(cursor.getString(3));
         animal.setCor(cursor.getString(4));
         animal.setNascimento(cursor.getString(5));
-        animal.setPeso(cursor.getDouble(6));
-        animal.setAltura(cursor.getDouble(7));
+        animal.setPeso(cursor.getString(6));
+        animal.setAltura(cursor.getString(7));
         animal.setTipo(cursor.getString(8));
-        animal.setIdUsuario(cursor.getInt(9));
+        animal.setIdUsuario(cursor.getLong(9));
         return animal;
     }
+    public List<Animal> listaAnimais() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        List<Animal> listaAnimal = new ArrayList<Animal>();
+        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL,new String[]{" * "} , dbHelper.USUARIO_ID+ " = "+ Sessao.getUsuario().get_idUsuario(), null, null, null, null);
+        if  (cursor.moveToFirst()) {
+            while(cursor.isAfterLast()) {
+                Animal animal = new Animal(cursor.getLong(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7),
+                        cursor.getString(8),
+                        cursor.getLong(9));
+                listaAnimal.add(animal);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return listaAnimal;
+    }
+
 }
