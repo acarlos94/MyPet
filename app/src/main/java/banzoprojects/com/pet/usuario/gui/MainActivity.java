@@ -5,11 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import banzoprojects.com.pet.R;
+import banzoprojects.com.pet.animal.dao.AnimalDAO;
 import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.animal.gui.CadastrarAnimalActivity;
 import banzoprojects.com.pet.infra.Sessao;
@@ -21,26 +25,37 @@ public class MainActivity extends AppCompatActivity {
     private Sessao sessao;
     private TextView tvBemVindo;
     private Animal animal;
+    private ListView listaAnimal;
+    private AnimalDAO ani;
+
+    private String[]itens = {"Matheus","Jose"};
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView listView = (ListView)findViewById(R.id.minhalista);
-
+        ani = new AnimalDAO(this);
         sessao = new Sessao();
-
         String usuarioLogado = sessao.getUsuario().getNome();
-//        ArrayAdapter<Animal> novoAnimal = new ArrayAdapter<Animal>();
-
-
-//        if (sessao.logado() == false){
-//            logout();
-//        }
-
         btnlogout = (Button) findViewById(R.id.btnLogout);
         btnCadastrarAnimal = (Button)findViewById(R.id.btnCadastrarAnimal);
+
+        listaAnimal = (ListView)findViewById(R.id.minhalista);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_list_item_1,
+                android.R.id.text1,itens);
+        listaAnimal.setAdapter(adapter);
+        listaAnimal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),"Teste de clique", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
         btnCadastrarAnimal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

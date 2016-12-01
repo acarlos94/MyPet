@@ -93,5 +93,18 @@ public class AnimalDAO {
         cursor.close();
         return listaAnimal;
     }
+    public List<String> nomeAnimais() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        List<String> nomeAnimal = new ArrayList<String>();
+        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL,new String[]{" * "} , dbHelper.USUARIO_ID+ " = "+ Sessao.getUsuario().get_idUsuario(), null, null, null, null);
+        if  (cursor.moveToFirst()) {
+            while(cursor.isAfterLast()) {
+                nomeAnimal.add(cursor.getString(1));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        return nomeAnimal;
+    }
 
 }
