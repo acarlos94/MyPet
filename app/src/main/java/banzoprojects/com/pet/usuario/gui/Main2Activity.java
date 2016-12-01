@@ -16,7 +16,7 @@ public class Main2Activity extends Activity {
     private ListView listaAnimais;
     private AnimalDAO animalDAO;
     private AnimalNegocio negocio;
-    private String[]itens = {"Angra","recife"};
+    private String[]itens = {"Vacina","Higiene", "Alimentação"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
