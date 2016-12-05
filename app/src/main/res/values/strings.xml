@@ -8,4 +8,40 @@
     <string name="cadastro">Cadastro</string>
     <string name="bem_vindo">Bem Vindo!</string>
     <string name="error_espaco_branco">Não são permitidos espaços em branco</string>
+
+    <string-array name="sexo">
+        <item>Sexo</item>
+        <item>Macho</item>
+        <item>Fémea</item>
+    </string-array>
+    <string-array name="racas">
+        <item>Raça</item>
+        <item>Akita Inu</item>
+        <item>Beagle</item>
+        <item>Beagle Harrier</item>
+        <item>Bobtail</item>
+        <item> Boiadeiro de Berna</item>
+        <item>Boxer</item>
+        <item>Braco Alemão</item>
+        <item>Braco Francês</item>
+        <item>Bull Terrier Inglês</item>
+        <item>Bulldog Americano</item>
+        <item>Bulldog Inglês</item>
+        <item>Cairn Terrier</item>
+        <item>Cane Corso</item>
+        <item>Caniche</item>
+        <item>Cão de Crista Chinês</item>
+        <item>Cão d’Água Espanhol</item>
+        <item>Cão Lobo Checoslovaco</item>
+        <item>Cavalier King Charles Spaniel</item>
+        <item>Chihuahua</item>
+        <item>Chow-Chow</item>
+        <item>Cocker Americano</item>
+        <item>Cocker Spaniel Inglês</item>
+        <item>Collie</item>
+        <item>Dálmata</item>
+        <item>Doberman</item>
+        <item>Dogue Alemão</item>
+        <item>Dogue de Bordéus</item>
+    </string-array>
 </resources>

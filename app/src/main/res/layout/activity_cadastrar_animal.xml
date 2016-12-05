@@ -17,8 +17,8 @@
         android:ems="10"
         android:background="@drawable/fundo_caixa_texto"
         android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/preto"
+        android:textColor="@color/preto"
         android:id="@+id/etNomeAnimal"
         android:layout_below="@+id/etNomeAnimal"
         android:layout_alignParentStart="true"
@@ -32,42 +32,21 @@
         android:ems="10"
         android:background="@drawable/fundo_caixa_texto"
         android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/preto"
+        android:textColor="@color/preto"
         android:id="@+id/etAlturaAnimal"
         android:layout_below="@+id/etSexoAnimal"
         android:layout_alignParentStart="true"
         android:layout_marginTop="1dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Sexo"
-        android:ems="10"
-        android:background="@drawable/fundo_caixa_texto"
-        android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:id="@+id/etSexoAnimal"
-        android:layout_below="@+id/etRacaAnimal"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="1dp" />
+    <Spinner
 
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Raça"
-        android:ems="10"
-        android:background="@drawable/fundo_caixa_texto"
-        android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:id="@+id/etRacaAnimal"
-        android:layout_below="@+id/etCorAnimal"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="1dp" />
+        android:id="@+id/spinnerTipo"
+        android:layout_weight="0.08"
+        />
+
 
     <EditText
         android:layout_width="match_parent"
@@ -77,12 +56,20 @@
         android:ems="10"
         android:background="@drawable/fundo_caixa_texto"
         android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/preto"
+        android:textColor="@color/preto"
         android:id="@+id/etCorAnimal"
         android:layout_below="@+id/edtPesoAnimal"
         android:layout_alignParentStart="true"
         android:layout_marginTop="1dp" />
+
+    <Spinner
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerRaca"
+        android:layout_weight="0.08" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -91,8 +78,8 @@
         android:ems="10"
         android:background="@drawable/fundo_caixa_texto"
         android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/preto"
+        android:textColor="@color/preto"
         android:id="@+id/etPesoAnimal"
         android:layout_below="@+id/etNomeAnimal"
         android:layout_alignParentStart="true"
@@ -103,27 +90,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Tipo"
-        android:ems="10"
-        android:background="@drawable/fundo_caixa_texto"
-        android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:id="@+id/etTipo"
-        android:layout_marginTop="1dp"
-        android:layout_below="@+id/editText8"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:hint="Nascimento"
         android:ems="10"
         android:background="@drawable/fundo_caixa_texto"
         android:padding="12dp"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
+        android:textColorHint="@color/preto"
+        android:textColor="@color/preto"
         android:id="@+id/etNascimentoAnimal"
         android:layout_marginTop="1dp"
         android:layout_below="@+id/editText9"
@@ -137,8 +109,7 @@
         android:background="@drawable/fundo_botao"
         android:onClick="onButtonClickSalvarAnimal"
         android:textSize="13sp"
-        android:layout_marginTop="21dp"
-        android:layout_weight="0.39" />
+        android:layout_marginTop="21dp" />
 
 
 </LinearLayout>

@@ -4,7 +4,6 @@ import android.content.Context;
 
 import banzoprojects.com.pet.animal.dao.AnimalDAO;
 import banzoprojects.com.pet.animal.dominio.Animal;
-import banzoprojects.com.pet.infra.Sessao;
 import banzoprojects.com.pet.usuario.dominio.Usuario;
 
 /**
@@ -22,7 +21,7 @@ public class AnimalNegocio {
 
     public void cadastrarAnimal(String nome, String raca, String sexo, String cor, String nascimento,
                                 String peso, String altura, String tipo){
-        Sessao sessao = new Sessao();
+//        Sessao sessao = new Sessao();
         Animal animal = new Animal();
         animal.setNome(nome);
         animal.setRaca(raca);
