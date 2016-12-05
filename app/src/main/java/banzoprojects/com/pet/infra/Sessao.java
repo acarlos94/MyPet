@@ -12,6 +12,10 @@ public class Sessao {
         return usuario;
     }
 
+    public static Animal getAnimal(){return animal;}
+
+    public static void setAnimal(){Sessao.animal=animal;}
+
     public static void setUsuario(Usuario usuario){
         Sessao.usuario = usuario;
     }

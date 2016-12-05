@@ -1,6 +1,8 @@
 package banzoprojects.com.pet.animal.dominio;
 
 
+import banzoprojects.com.pet.usuario.dominio.Usuario;
+
 public class Animal {
 
     private Long _id;
@@ -12,14 +14,14 @@ public class Animal {
     private String peso;
     private String altura;
     private String tipo;
-    private Long idUsuario;
+    private Usuario usuario ;
 
     public Animal() {
     }
 
 
     public Animal(Long id, String nome, String raca, String sexo, String cor, String nascimento,
-                  String peso, String altura, String tipo, Long idUsuario) {
+                  String peso, String altura, String tipo, Usuario usuario) {
         this._id = id;
         this.nome = nome;
         this.raca = raca;
@@ -29,10 +31,10 @@ public class Animal {
         this.peso = peso;
         this.altura = altura;
         this.tipo = tipo;
-        this.idUsuario = idUsuario;
+        this.usuario = usuario;
     }
 
-    public Long get_id() {
+    public Long get_idAnimal() {
 
         return _id;
     }
@@ -105,11 +107,11 @@ public class Animal {
         this.tipo = tipo;
     }
 
-    public Long getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

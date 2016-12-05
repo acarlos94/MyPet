@@ -2,8 +2,6 @@ package banzoprojects.com.pet.animal.negocio;
 
 import android.content.Context;
 
-import java.util.ArrayList;
-
 import banzoprojects.com.pet.animal.dao.AnimalDAO;
 import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.infra.Sessao;
@@ -34,7 +32,7 @@ public class AnimalNegocio {
         animal.setPeso(peso);
         animal.setAltura(altura);
         animal.setTipo(tipo);
-        animal.setIdUsuario(usuario.get_idUsuario());
+//        animal.setIdUsuario(usuario.get_idUsuario());
 
 
 
@@ -42,8 +40,8 @@ public class AnimalNegocio {
         animal.set_id(idAnimal);
     }
 
-    public ArrayList<Animal> getTodosAnimais(){
-        return (ArrayList<Animal>) animalDAO.listaAnimais();
-    }
+//    public ArrayList<Animal> getTodosAnimais(){
+//        return (ArrayList<Animal>) animalDAO.listaAnimais();
+//    }
 }
 

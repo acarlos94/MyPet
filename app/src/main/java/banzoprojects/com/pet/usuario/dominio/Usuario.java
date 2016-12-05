@@ -15,12 +15,12 @@ public class Usuario {
 
     }
 
-    public Usuario(Long id, String nome, String email, String senha){
-        this._idUsuario = id;
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-    }
+//    public Usuario(Long id, String nome, String email, String senha){
+//        this._idUsuario = id;
+//        this.nome = nome;
+//        this.email = email;
+//        this.senha = senha;
+//    }
 
     public Long get_idUsuario() {
         return _idUsuario;

@@ -84,6 +84,21 @@ public class UsuarioDAO {
         return usuario;
 
     }
+    public Usuario getUsuario(Long id){
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor cursor = db.query(helper.TABELA_USUARIO,new String[]{" * "}, " id=?",
+                new String[]{id.toString()}, null, null, null);
+
+        Usuario usuario = null;
+        if  (cursor.moveToFirst()){
+            usuario = criarUsuario(cursor);
+        }
+        cursor.close();
+        db.close();
+        return usuario;
+
+    }
 
     private Usuario criarUsuario(Cursor cursor) {
         Usuario usuario = new Usuario();

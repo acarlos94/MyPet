@@ -1,120 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_registro_animal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@color/branco">
+    android:background="@drawable/fundo_tela"
+    android:orientation="vertical"
+    tools:context="banzoprojects.com.pet.animal.gui.CadastrarAnimalActivity"
+    android:weightSum="1">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/activity_registro_animal"
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="banzoprojects.com.pet.animal.gui.CadastrarAnimalActivity">
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nome"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etNomeAnimal"
+        android:layout_below="@+id/etNomeAnimal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Nome"
-            android:ems="10"
-            android:id="@+id/etNomeAnimal"
-            android:layout_below="@+id/etNomeAnimal"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Altura"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etAlturaAnimal"
+        android:layout_below="@+id/etSexoAnimal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="1dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Altura"
-            android:ems="10"
-            android:id="@+id/etAlturaAnimal"
-            android:layout_below="@+id/etSexoAnimal"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Sexo"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etSexoAnimal"
+        android:layout_below="@+id/etRacaAnimal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="1dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Sexo"
-            android:ems="10"
-            android:id="@+id/etSexoAnimal"
-            android:layout_below="@+id/etRacaAnimal"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Raça"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etRacaAnimal"
+        android:layout_below="@+id/etCorAnimal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="1dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Raça"
-            android:ems="10"
-            android:id="@+id/etRacaAnimal"
-            android:layout_below="@+id/etCorAnimal"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Cor"
-            android:ems="10"
-            android:id="@+id/etCorAnimal"
-            android:layout_below="@+id/edtPesoAnimal"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Peso"
-            android:ems="10"
-            android:id="@+id/etPesoAnimal"
-            android:layout_below="@+id/etNomeAnimal"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Tipo"
-            android:ems="10"
-            android:id="@+id/etTipo"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/editText8"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Nascimento"
-            android:ems="10"
-            android:id="@+id/etNascimentoAnimal"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/editText9"
-            android:layout_alignParentStart="true" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnSalvarAnimal"
-            android:text="Salvar Animal"
-            android:onClick="onButtonClickSalvarAnimal"
-            android:textSize="13sp"
-            android:layout_marginTop="21dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Cor"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etCorAnimal"
+        android:layout_below="@+id/edtPesoAnimal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="1dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Peso"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etPesoAnimal"
+        android:layout_below="@+id/etNomeAnimal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="1dp" />
 
 
-    </LinearLayout>
-</ScrollView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Tipo"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etTipo"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/editText8"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nascimento"
+        android:ems="10"
+        android:background="@drawable/fundo_caixa_texto"
+        android:padding="12dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:id="@+id/etNascimentoAnimal"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/editText9"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSalvarAnimal"
+        android:text="Salvar Animal"
+        android:background="@drawable/fundo_botao"
+        android:onClick="onButtonClickSalvarAnimal"
+        android:textSize="13sp"
+        android:layout_marginTop="21dp"
+        android:layout_weight="0.39" />
+
+
+</LinearLayout>
 
 
 
