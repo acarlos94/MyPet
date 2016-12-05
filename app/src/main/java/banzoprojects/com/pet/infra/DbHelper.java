@@ -44,22 +44,21 @@ public class DbHelper extends SQLiteOpenHelper{
 
     //atributos tabela alimentos
     public static final String TABELA_ALIMENTO = "alimentos";
-    public static final String COLUNA_ID_ALIMENTO = "idAlimento";
     public static final String COLUNA_NOME_ALIMENTO = "nomeAlimento";
     public static final String COLUNA_RECOMENDADO = "recomendado";
     public static final String ID_ANIMAL = "_idAnimal";
 
-//    //atributos da tabela vacina
-//    public static final String TABELA_VACINAS="vacina";
-//    public static final String COLUNA_NOME_VACINA="nomeVacina";
-//    public static final String COLUNA_DATA_VACINA="dataVacina";
-//    public static final String COLUNA_LOCAL="local";
-//    public static final String COLUNA_DATA_PROXIMA_VACINA="proximaVacina";
+    //atributos da tabela vacina
+    public static final String TABELA_VACINAS="vacina";
+    public static final String COLUNA_NOME_VACINA="nomeVacina";
+    public static final String COLUNA_DATA_VACINA="dataVacina";
+    public static final String COLUNA_LOCAL="local";
+    public static final String COLUNA_DATA_PROXIMA_VACINA="proximaVacina";
 
 
 
-
-
+//
+//
 //       public static final String CREATE_EMPLOYEE_TABLE =
 //          "CREATE TABLE "
 //                + EMPLOYEE_TABLE + "(" + ID_COLUMN + " INTEGER PRIMARY KEY, "
@@ -122,22 +121,19 @@ public class DbHelper extends SQLiteOpenHelper{
 
         db.execSQL("CREATE TABLE "
                 + TABELA_ALIMENTO + " ( "
-                + COLUNA_ID_ALIMENTO + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUNA_NOME_ALIMENTO + " TEXT,"
                 + COLUNA_RECOMENDADO + " TEXT,"
                 + ID_ANIMAL + " INTEGER);");
 
-//        db.execSQL("CREATE TABLE"
-//                + TABELA_VACINAS + " ( "
-//                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-//                + COLUNA_NOME_VACINA + " TEXT,"
-//                + COLUNA_DATA_VACINA + " DATE,"
-//                + COLUNA_LOCAL + " TEXT,"
-//                + COLUNA_DATA_PROXIMA_VACINA + " DATE,"
-//                + ID_ANIMAL + " INTEGER);");
-
-
-
+        db.execSQL("CREATE TABLE "
+                + TABELA_VACINAS + " ( "
+                + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUNA_NOME_VACINA + " TEXT,"
+                + COLUNA_DATA_VACINA + " DATE,"
+                + COLUNA_LOCAL + " TEXT,"
+                + COLUNA_DATA_PROXIMA_VACINA + " DATE,"
+                + ID_ANIMAL + " INTEGER);");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -146,7 +142,7 @@ public class DbHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXIST " + TABELA_BANHO);
         db.execSQL("DROP TABLE IF EXIST " + TABELA_TOSA);
         db.execSQL("DROP TABLE IF EXIST " + TABELA_ALIMENTO);
-//        db.execSQL("DROP TABLE IF EXIST " + TABELA_VACINAS);
+        db.execSQL("DROP TABLE IF EXIST " + TABELA_VACINAS);
 
 
         onCreate(db);
