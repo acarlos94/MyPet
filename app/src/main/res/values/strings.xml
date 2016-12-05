@@ -44,4 +44,9 @@
         <item>Dogue Alemão</item>
         <item>Dogue de Bordéus</item>
     </string-array>
+    <string-array name="tipo">
+        <item>Tipo de Animal</item>
+        <item>Gato</item>
+        <item>Cachorro</item>
+    </string-array>
 </resources>

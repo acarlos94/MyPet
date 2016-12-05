@@ -23,6 +23,7 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
     private Button btnSalvarAnimal;
     Spinner tipo;
     Spinner raca;
+    Spinner tipoAnimal;
 
 
     @Override
@@ -31,20 +32,27 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar_animal);
         btnSalvarAnimal = (Button)findViewById(R.id.btnSalvarAnimal);
         tipo = (Spinner)findViewById(R.id.spinnerTipo);
-        ArrayAdapter adapterTipo = ArrayAdapter.createFromResource(this,R.array.sexo,android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter adapterTipo = ArrayAdapter.createFromResource(this,R.array.sexo,android.R.layout.simple_spinner_item);
         tipo.setAdapter(adapterTipo);
 
         raca = (Spinner)findViewById(R.id.spinnerRaca);
         ArrayAdapter adapteRaca = ArrayAdapter.createFromResource(this, R.array.racas, android.R.layout.simple_spinner_item);
         raca.setAdapter(adapteRaca);
+
+        tipoAnimal = (Spinner)findViewById(R.id.spinnerTipoAnimal);
+        ArrayAdapter adapteTipoAnimal = ArrayAdapter.createFromResource(this, R.array.tipo, android.R.layout.simple_spinner_item);
+        tipoAnimal.setAdapter(adapteTipoAnimal);
+
+
     }
     public void onButtonClickSalvarAnimal(View v){
 
         if (v.getId()== R.id.btnSalvarAnimal){
-            String especie = tipo.getSelectedItem().toString();
+            String sexo = tipo.getSelectedItem().toString();
             String racas = raca.getSelectedItem().toString();
+            String tipo = tipoAnimal.getSelectedItem().toString();
             EditText nome =(EditText)findViewById(R.id.etNomeAnimal);
-            EditText sexo =(EditText)findViewById(R.id.etSexoAnimal);
+//            EditText sexo =(EditText)findViewById(R.id.etSexoAnimal);
 //            EditText raca =(EditText)findViewById(R.id.etRacaAnimal);
             EditText cor =(EditText)findViewById(R.id.etCorAnimal);
             EditText peso =(EditText)findViewById(R.id.etPesoAnimal);
@@ -57,7 +65,7 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
 
 
             String nomeAnimal = nome.getText().toString();
-            String sexoAnimal = sexo.getText().toString();
+//            String sexoAnimal = sexo.getText().toString();
 //            String racaAnimal = raca.getText().toString();
             String corAnimal = cor.getText().toString();
             String pesoAnimal = peso.getText().toString();
@@ -68,8 +76,8 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
 
 
 
-            animalNegocio.cadastrarAnimal(nomeAnimal,racas,sexoAnimal,corAnimal,nascimentoAnimal,pesoAnimal,alturaAnimal,
-                    especie);
+            animalNegocio.cadastrarAnimal (nomeAnimal, racas, sexo, corAnimal, nascimentoAnimal,
+                    pesoAnimal, alturaAnimal, tipo);
             guiUtil.toastLong(getApplicationContext(), "Animal cadastrado");
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
