@@ -6,14 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.infra.DbHelper;
 import banzoprojects.com.pet.infra.Sessao;
+import banzoprojects.com.pet.usuario.dao.UsuarioDAO;
 
 public class AnimalDAO {
     private DbHelper dbHelper;
+    private UsuarioDAO usuarioDAO;
 
     public AnimalDAO(Context context) {
         dbHelper = new DbHelper((context));
@@ -67,32 +68,35 @@ public class AnimalDAO {
         animal.setPeso(cursor.getString(6));
         animal.setAltura(cursor.getString(7));
         animal.setTipo(cursor.getString(8));
-        animal.setIdUsuario(cursor.getLong(9));
+        animal.setUsuario(usuarioDAO.getUsuario(cursor.getLong(9)));
+
         return animal;
+        //        request pesquisar
     }
-    public List<Animal> listaAnimais() {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        List<Animal> listaAnimal = new ArrayList<Animal>();
-        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL,new String[]{" * "} , dbHelper.USUARIO_ID+ " = "+ Sessao.getUsuario().get_idUsuario(), null, null, null, null);
-        if  (cursor.moveToFirst()) {
-            while(cursor.isAfterLast()) {
-                Animal animal = new Animal(cursor.getLong(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getString(7),
-                        cursor.getString(8),
-                        cursor.getLong(9));
-                listaAnimal.add(animal);
-                cursor.moveToNext();
-            }
-        }
-        cursor.close();
-        return listaAnimal;
-    }
+//    public List<Animal> listaAnimais() {
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//        List<Animal> listaAnimal = new ArrayList<Animal>();
+//        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL,new String[]{" * "} , dbHelper.USUARIO_ID+ " = "+ Sessao.getUsuario().get_idUsuario(), null, null, null, null);
+//        if  (cursor.moveToFirst()) {
+//            while(cursor.isAfterLast()) {
+//                Animal animal = new Animal(cursor.getLong(0),
+//                        cursor.getString(1),
+//                        cursor.getString(2),
+//                        cursor.getString(3),
+//                        cursor.getString(4),
+//                        cursor.getString(5),
+//                        cursor.getString(6),
+//                        cursor.getString(7),
+//                        cursor.getString(8),
+//                        cursor.getLong(9));
+//                listaAnimal.add(animal);
+//                cursor.moveToNext();
+//            }
+//        }
+//        cursor.close();
+//        return listaAnimal;
+//    }
+
     public ArrayList<String> getAnimais(long id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String comando = "SELECT * FROM " + DbHelper.TABELA_ANIMAL +
