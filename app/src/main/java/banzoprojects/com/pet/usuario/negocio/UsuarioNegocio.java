@@ -34,7 +34,6 @@ public class UsuarioNegocio {
         usuario.setSenha(senhaMascarada);
 
         long idUsuario = usuarioDAO.inserir(usuario);
-
         usuario.set_idUsuario(idUsuario);
 
     }

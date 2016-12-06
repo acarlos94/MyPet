@@ -20,8 +20,8 @@
         android:padding="12dp"
         android:textColorHint="@color/preto"
         android:textColor="@color/preto"
-        android:id="@+id/etNomeAnimal"
-        android:layout_below="@+id/etNomeAnimal"
+        android:id="@+id/etNomeVacina"
+        android:layout_below="@+id/etNomeVacinar"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp" />
 
@@ -35,7 +35,7 @@
         android:padding="12dp"
         android:textColorHint="@color/preto"
         android:textColor="@color/preto"
-        android:id="@+id/etAlturaAnimal"
+        android:id="@+id/etDataVacina"
         android:layout_below="@+id/etSexoAnimal"
         android:layout_alignParentStart="true"
         android:layout_marginTop="1dp" />
@@ -51,8 +51,8 @@
         android:padding="12dp"
         android:textColorHint="@color/preto"
         android:textColor="@color/preto"
-        android:id="@+id/etCorAnimal"
-        android:layout_below="@+id/edtPesoAnimal"
+        android:id="@+id/etLocal"
+        android:layout_below="@+id/etLocal"
         android:layout_alignParentStart="true"
         android:layout_marginTop="1dp" />
 
@@ -68,7 +68,7 @@
         android:padding="12dp"
         android:textColorHint="@color/preto"
         android:textColor="@color/preto"
-        android:id="@+id/etPesoAnimal"
+        android:id="@+id/etProximaVacina"
         android:layout_below="@+id/etNomeAnimal"
         android:layout_alignParentStart="true"
         android:layout_marginTop="1dp" />
@@ -77,10 +77,10 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSalvarAnimal"
+        android:id="@+id/btnSalvarVacina"
         android:text="Salvar Vacina"
         android:background="@drawable/fundo_botao"
-        android:onClick="onButtonClickSalvarAnimal"
+        android:onClick="onButtonClickSalvarVacina"
         android:textSize="13sp"
         android:layout_marginTop="21dp" />
 

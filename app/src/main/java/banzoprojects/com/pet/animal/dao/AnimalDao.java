@@ -56,6 +56,19 @@ public class AnimalDAO {
         db.close();
         return animal;
     }
+    public Animal getAnimal(Long id) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL, new String[]{" * "}, " _id=? ", new String[]{id.toString()}, null, null, null);
+
+        Animal animal = null;
+        if (cursor.moveToFirst()) {
+            animal = criarAnimal(cursor);
+        }
+        cursor.close();
+        db.close();
+        return animal;
+    }
 
     private Animal criarAnimal(Cursor cursor) {
         Animal animal = new Animal();

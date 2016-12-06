@@ -15,6 +15,7 @@ import banzoprojects.com.pet.R;
 import banzoprojects.com.pet.animal.dao.AnimalDAO;
 import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.animal.gui.CadastrarAnimalActivity;
+import banzoprojects.com.pet.animal.gui.OpcoesAnimalActivity;
 import banzoprojects.com.pet.infra.Sessao;
 import banzoprojects.com.pet.usuario.dominio.Usuario;
 
@@ -50,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText(getApplicationContext(),"Teste de clique", Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+//                Sessao.setAnimal(ani.getAnimal());
+                Intent intent = new Intent(getApplicationContext(), OpcoesAnimalActivity.class);
                 startActivity(intent);
             }
         });

@@ -27,14 +27,14 @@ public class VacinaDAO {
         values.put(dbHelper.COLUNA_DATA_VACINA, vacina.getData_vacina());
         values.put(dbHelper.COLUNA_LOCAL, vacina.getLocal());
         values.put(dbHelper.COLUNA_DATA_PROXIMA_VACINA, vacina.getProxima_vacina());
-        values.put(dbHelper.ANIMAL_ID, Sessao.getUsuario().get_idUsuario());
+//        mudar
+//        values.put(dbHelper.ANIMAL_ID, Sessao.getUsuario().get_idUsuario());
 
 
         String tabela = dbHelper.TABELA_VACINAS;
 
         long id = db.insert(tabela, null, values);
         db.close();
-
         return id;
     }
     public Vacina getVacina(String nome){

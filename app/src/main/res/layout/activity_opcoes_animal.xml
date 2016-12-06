@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/fundo_tela"
-    tools:context="banzoprojects.com.pet.usuario.gui.Main2Activity"
+    tools:context="banzoprojects.com.pet.animal.gui.OpcoesAnimalActivity"
     android:weightSum="1">
 
 
@@ -28,7 +28,8 @@
         android:background="@drawable/fundo_botao"
         android:layout_below="@+id/btnVacinas"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"
+        android:onClick="onButtonClickAlimentacao"/>
 
     <Button
         android:text="Higiene"
@@ -39,7 +40,8 @@
         android:background="@drawable/fundo_botao"
         android:layout_marginTop="127dp"
         android:layout_below="@+id/textView5"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="onButtonClickHigiene"/>
 
     <Button
         android:text="Vacinas"
@@ -49,8 +51,9 @@
         android:background="@drawable/fundo_botao"
         android:layout_marginBottom="56dp"
         android:id="@+id/btnVacinas"
-        android:onClick="onButtonClickSalvarVacina"
+        android:onClick="onButtonClickVacina"
         android:layout_alignBottom="@+id/btnHigiene"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
 </RelativeLayout>
