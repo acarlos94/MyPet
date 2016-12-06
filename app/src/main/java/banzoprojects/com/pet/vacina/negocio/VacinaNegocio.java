@@ -6,7 +6,6 @@ import android.content.Context;
 import java.util.ArrayList;
 
 import banzoprojects.com.pet.animal.dominio.Animal;
-import banzoprojects.com.pet.infra.Sessao;
 import banzoprojects.com.pet.vacina.dao.VacinaDAO;
 import banzoprojects.com.pet.vacina.dominio.Vacina;
 
@@ -24,7 +23,7 @@ public class VacinaNegocio {
         vacina.setData_vacina(data);
         vacina.setLocal(local);
         vacina.setProxima_vacina(dataproxima);
-        vacina.setIdAnimal(Sessao.getUsuario().get_idUsuario());
+//        vacina.setIdAnimal(Sessao.getAnimal().get_idAnimal());
 
         Long idVacina = vacinaDAO.inserir(vacina);
         vacina.set_id(idVacina);

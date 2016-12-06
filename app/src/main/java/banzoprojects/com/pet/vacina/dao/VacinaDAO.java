@@ -20,15 +20,13 @@ public class VacinaDAO {
 
     public long inserir(Vacina vacina){
         SQLiteDatabase db= dbHelper.getWritableDatabase();
-
         ContentValues values = new ContentValues();
-
         values.put(dbHelper.COLUNA_NOME_VACINA, vacina.getNome_vacina());
         values.put(dbHelper.COLUNA_DATA_VACINA, vacina.getData_vacina());
         values.put(dbHelper.COLUNA_LOCAL, vacina.getLocal());
         values.put(dbHelper.COLUNA_DATA_PROXIMA_VACINA, vacina.getProxima_vacina());
 //        mudar
-//        values.put(dbHelper.ANIMAL_ID, Sessao.getUsuario().get_idUsuario());
+        values.put(dbHelper.ID_ANIMAL, Sessao.getAnimal().get_idAnimal());
 
 
         String tabela = dbHelper.TABELA_VACINAS;

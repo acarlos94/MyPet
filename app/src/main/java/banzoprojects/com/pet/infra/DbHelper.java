@@ -109,7 +109,7 @@ public class DbHelper extends SQLiteOpenHelper{
                 + COLUNA_DATA_BANHO + " DATE,"
                 + COLUNA_LOCAL_BANHO + " TEXT,"
                 + COLUNA_DATA_PROX_BANHO + " DATE,"
-                + ANIMAL_ID + " INTEGER);");
+                + ID_ANIMAL + " INTEGER);");
 
         db.execSQL("CREATE TABLE "
                 + TABELA_TOSA + " ( "

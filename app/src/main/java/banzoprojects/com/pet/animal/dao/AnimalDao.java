@@ -22,9 +22,7 @@ public class AnimalDAO {
 
     public long inserir(Animal animal) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-
         ContentValues values = new ContentValues();
-
         values.put(dbHelper.COLUNA_NOME, animal.getNome());
         values.put(dbHelper.COLUNA_RACA, animal.getRaca());
         values.put(dbHelper.COLUNA_SEXO, animal.getSexo());
