@@ -10,12 +10,46 @@
     <string name="error_espaco_branco">Não são permitidos espaços em branco</string>
 
     <string-array name="sexo">
-        <item>Sexo</item>
+        <item></item>
         <item>Macho</item>
-        <item>Fémea</item>
+        <item>Fêmea</item>
     </string-array>
+
+    <string-array name="raçasdeGatos">
+        <item>GATOS</item>
+        <item>Abissínio</item>
+        <item>American Shorthair</item>
+        <item>Angorá</item>
+        <item>Azul Russo</item>
+        <item>Bengal</item>
+        <item>Brazilian Shorthair</item>
+        <item>British Shorthair</item>
+        <item>British Shorthair</item>
+        <item>Chartreux</item>
+        <item>Cornish Rex</item>
+        <item>Devon Rex</item>
+        <item>Egyptian Mau</item>
+        <item>European Shorthair</item>
+        <item>Exótico</item>
+        <item>Himalaio</item>
+        <item>Maine Coon</item>
+        <item>Munchkin</item>
+        <item>Norwegian Forest</item>
+        <item>Oriental</item>
+        <item>Persa</item>
+        <item>Ragdoll</item>
+        <item>Sagrado da Birmânia</item>
+        <item>Savannah</item>
+        <item>Scottish Fold</item>
+        <item>Siamês</item>
+        <item>Sphynx</item>
+
+    </string-array>
+
+
     <string-array name="racas">
-        <item>Raça</item>
+        <item></item>
+        <item>CÃES</item>
         <item>Akita Inu</item>
         <item>Beagle</item>
         <item>Beagle Harrier</item>
@@ -43,9 +77,64 @@
         <item>Doberman</item>
         <item>Dogue Alemão</item>
         <item>Dogue de Bordéus</item>
+        <item></item>
+        <item>GATOS</item>
+        <item>Abissínio</item>
+        <item>American Shorthair</item>
+        <item>Angorá</item>
+        <item>Azul Russo</item>
+        <item>Bengal</item>
+        <item>Brazilian Shorthair</item>
+        <item>British Shorthair</item>
+        <item>British Shorthair</item>
+        <item>Chartreux</item>
+        <item>Cornish Rex</item>
+        <item>Devon Rex</item>
+        <item>Egyptian Mau</item>
+        <item>European Shorthair</item>
+        <item>Exótico</item>
+        <item>Himalaio</item>
+        <item>Maine Coon</item>
+        <item>Munchkin</item>
+        <item>Norwegian Forest</item>
+        <item>Oriental</item>
+        <item>Persa</item>
+        <item>Ragdoll</item>
+        <item>Sagrado da Birmânia</item>
+        <item>Savannah</item>
+        <item>Scottish Fold</item>
+        <item>Siamês</item>
+        <item>Sphynx</item>
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
     </string-array>
-    <string-array name="tipo">
-        <item>Tipo de Animal</item>
+    <string-array name="tipoAnimal">
+        <item></item>
         <item>Gato</item>
         <item>Cachorro</item>
     </string-array>

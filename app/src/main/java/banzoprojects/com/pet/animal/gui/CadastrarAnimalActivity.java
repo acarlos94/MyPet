@@ -31,6 +31,7 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_animal);
         btnSalvarAnimal = (Button)findViewById(R.id.btnSalvarAnimal);
+
         tipo = (Spinner)findViewById(R.id.spinnerTipo);
         ArrayAdapter adapterTipo = ArrayAdapter.createFromResource(this,R.array.sexo,android.R.layout.simple_spinner_item);
         tipo.setAdapter(adapterTipo);
@@ -40,9 +41,8 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
         raca.setAdapter(adapteRaca);
 
         tipoAnimal = (Spinner)findViewById(R.id.spinnerTipoAnimal);
-        ArrayAdapter adapteTipoAnimal = ArrayAdapter.createFromResource(this, R.array.tipo, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapteTipoAnimal = ArrayAdapter.createFromResource(this, R.array.tipoAnimal, android.R.layout.simple_spinner_item);
         tipoAnimal.setAdapter(adapteTipoAnimal);
-
 
     }
     public void onButtonClickSalvarAnimal(View v){

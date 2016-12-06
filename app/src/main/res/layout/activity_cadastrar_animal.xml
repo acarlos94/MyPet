@@ -9,6 +9,7 @@
     tools:context="banzoprojects.com.pet.animal.gui.CadastrarAnimalActivity"
     android:weightSum="1">
 
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,32 +25,47 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo de Animal"
+        android:textSize="15dp"/>
 
     <Spinner
 
-        android:layout_width="match_parent"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerTipoAnimal"
-        android:layout_weight="0.08"
-        />
+        android:layout_weight="0.12" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Raça"
+        android:textSize="15dp"/>
 
     <Spinner
 
-        android:layout_width="match_parent"
-
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerRaca"
-        android:layout_weight="0.08" />
+        android:layout_weight="0.12" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sexo"
+        android:textSize="15dp"/>
 
     <Spinner
 
-        android:layout_width="match_parent"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerTipo"
-        android:layout_weight="0.08"
+        android:layout_weight="0.12"
 
         />
-    
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

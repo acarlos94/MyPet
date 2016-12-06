@@ -23,7 +23,6 @@
             android:label="@string/bem_vindo" />
         <activity android:name=".animal.gui.CadastrarAnimalActivity" />
         <activity android:name=".usuario.gui.Main2Activity" />
-        <activity android:name=".vacina.gui.CadastrarAnimalActivity" />
         <activity android:name=".vacina.gui.CadastroVacina"></activity>
     </application>
 
