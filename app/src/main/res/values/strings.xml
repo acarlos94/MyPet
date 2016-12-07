@@ -15,38 +15,6 @@
         <item>Fêmea</item>
     </string-array>
 
-    <string-array name="raçasdeGatos">
-        <item>GATOS</item>
-        <item>Abissínio</item>
-        <item>American Shorthair</item>
-        <item>Angorá</item>
-        <item>Azul Russo</item>
-        <item>Bengal</item>
-        <item>Brazilian Shorthair</item>
-        <item>British Shorthair</item>
-        <item>British Shorthair</item>
-        <item>Chartreux</item>
-        <item>Cornish Rex</item>
-        <item>Devon Rex</item>
-        <item>Egyptian Mau</item>
-        <item>European Shorthair</item>
-        <item>Exótico</item>
-        <item>Himalaio</item>
-        <item>Maine Coon</item>
-        <item>Munchkin</item>
-        <item>Norwegian Forest</item>
-        <item>Oriental</item>
-        <item>Persa</item>
-        <item>Ragdoll</item>
-        <item>Sagrado da Birmânia</item>
-        <item>Savannah</item>
-        <item>Scottish Fold</item>
-        <item>Siamês</item>
-        <item>Sphynx</item>
-
-    </string-array>
-
-
     <string-array name="racas">
         <item></item>
         <item>CÃES</item>

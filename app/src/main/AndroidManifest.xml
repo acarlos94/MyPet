@@ -23,7 +23,10 @@
             android:label="@string/bem_vindo" />
         <activity android:name=".animal.gui.CadastrarAnimalActivity" />
         <activity android:name=".animal.gui.OpcoesAnimalActivity" />
-        <activity android:name=".vacina.gui.CadastroVacina"></activity>
+        <activity android:name=".vacina.gui.CadastroVacina" />
+        <activity android:name=".alimentacao.gui.AlimentacaoActivity" />
+        <activity android:name=".alimentacao.gui.CadastrarAlimentoActivity"></activity>
+
     </application>
 
 </manifest>

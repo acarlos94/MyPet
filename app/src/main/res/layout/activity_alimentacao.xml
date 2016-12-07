@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_alimentacao"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    tools:context="banzoprojects.com.pet.alimentacao.gui.AlimentacaoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="Alimentos Recomendados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRecomendados"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:textAlignment="center" />
+
+        <ListView
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="172dp"
+            android:id="@+id/lvRecomendado"
+            android:layout_weight="0.08" />
+
+        <TextView
+            android:text="Alimentos Não Recomendados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNaoRecomendado"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:textAlignment="center" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="159dp"
+            android:id="@+id/lvNaoRecomendado"
+            android:layout_weight="0.41" />
+
+        <Button
+            android:text="Cadastrar Alimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCadastrarAlimento"
+            android:layout_weight="0.09" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -13,7 +13,6 @@ import banzoprojects.com.pet.R;
 import banzoprojects.com.pet.animal.negocio.AnimalNegocio;
 import banzoprojects.com.pet.infra.GuiUtil;
 import banzoprojects.com.pet.infra.Validacao;
-import banzoprojects.com.pet.usuario.gui.LoginActivity;
 import banzoprojects.com.pet.usuario.gui.MainActivity;
 
 public class CadastrarAnimalActivity extends AppCompatActivity {
@@ -82,10 +81,11 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
 
-        }else if (v.getId() == R.id.btnVoltarParaLogin){
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
         }
+//        else if (v.getId() == R.id.btnVoltarParaLogin){
+//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+//            startActivity(intent);
+//        }
 
     }
 }

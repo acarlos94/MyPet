@@ -9,14 +9,18 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import banzoprojects.com.pet.animal.dao.AnimalDAO;
 import banzoprojects.com.pet.infra.DbHelper;
 import banzoprojects.com.pet.infra.Sessao;
 import banzoprojects.com.pet.vacina.dominio.Vacina;
 
 public class VacinaDAO {
     private DbHelper dbHelper;
-
-    public VacinaDAO(Context context){dbHelper = new DbHelper(context);}
+    Sessao sessao;
+    private AnimalDAO animalDAO;
+    public VacinaDAO(Context context){
+        animalDAO = new AnimalDAO(context);
+        dbHelper = new DbHelper(context);}
 
     public long inserir(Vacina vacina){
         SQLiteDatabase db= dbHelper.getWritableDatabase();
@@ -26,7 +30,7 @@ public class VacinaDAO {
         values.put(dbHelper.COLUNA_LOCAL, vacina.getLocal());
         values.put(dbHelper.COLUNA_DATA_PROXIMA_VACINA, vacina.getProxima_vacina());
 //        mudar
-        values.put(dbHelper.ID_ANIMAL, Sessao.getAnimal().get_idAnimal());
+        values.put(dbHelper.ID_ANIMAL,sessao.getAnimal().get_idAnimal());
 
 
         String tabela = dbHelper.TABELA_VACINAS;
@@ -48,6 +52,19 @@ public class VacinaDAO {
         db.close();
         return vacina;
     }
+    public Vacina getVacina(Long id){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Cursor cursor = db.query(dbHelper.TABELA_VACINAS, new String[]{" * "}, " _id=? ", new String[]{id.toString()}, null, null, null);
+
+        Vacina vacina=null;
+        if (cursor.moveToFirst()){
+            vacina = criarVacina(cursor);
+        }
+        cursor.close();
+        db.close();
+        return vacina;
+    }
     private Vacina criarVacina(Cursor cursor){
         Vacina vacina = new Vacina();
         vacina.set_id(cursor.getLong(0));
@@ -55,6 +72,8 @@ public class VacinaDAO {
         vacina.setData_vacina(cursor.getString(2));
         vacina.setLocal(cursor.getString(3));
         vacina.setProxima_vacina(cursor.getString(4));
+        vacina.setAnimal(animalDAO.getAnimal(cursor.getLong(5)));
+        cursor.close();
         return vacina;
     }
 
@@ -62,7 +81,7 @@ public class VacinaDAO {
         SQLiteDatabase db=dbHelper.getReadableDatabase();
         List<Vacina>listaVacina=new ArrayList<Vacina>();
 
-        Cursor cursor = db.query(dbHelper.TABELA_VACINAS,new String[]{" * "} , dbHelper.ANIMAL_ID+ " = "+ Sessao.getAnimal().get_idAnimal(), null, null, null, null);
+        Cursor cursor = db.query(dbHelper.TABELA_VACINAS,new String[]{" * "} , dbHelper.ID_ANIMAL+ " = "+ Sessao.getAnimal().get_idAnimal(), null, null, null, null);
         if (cursor.moveToFirst()) {
             while (cursor.isAfterLast()) {
                 Vacina vacina = new Vacina(cursor.getLong(0),
@@ -70,6 +89,7 @@ public class VacinaDAO {
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4));
+
                 listaVacina.add(vacina);
                 cursor.moveToNext();
             }
@@ -81,7 +101,7 @@ public class VacinaDAO {
     public ArrayList<String> getVacinais(long id){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String comando = "SELECT * FROM " + DbHelper.TABELA_VACINAS +
-                " WHERE " + DbHelper.ANIMAL_ID + " LIKE ?";
+                " WHERE " + DbHelper.ID_ANIMAL + " LIKE ?";
         String idString = Long.toString(id);
         String [] argumentos = {idString};
         Cursor cursor = db.rawQuery(comando, argumentos);

@@ -14,6 +14,7 @@ public class UsuarioDAO {
 
 
     public UsuarioDAO(Context context){
+
         helper = new DbHelper(context);
     }
 
@@ -87,7 +88,7 @@ public class UsuarioDAO {
     public Usuario getUsuario(Long id){
         SQLiteDatabase db = helper.getReadableDatabase();
 
-        Cursor cursor = db.query(helper.TABELA_USUARIO,new String[]{" * "}, " id=?",
+        Cursor cursor = db.query(helper.TABELA_USUARIO,new String[]{" * "}, " _id=?",
                 new String[]{id.toString()}, null, null, null);
 
         Usuario usuario = null;
@@ -97,7 +98,6 @@ public class UsuarioDAO {
         cursor.close();
         db.close();
         return usuario;
-
     }
 
     private Usuario criarUsuario(Cursor cursor) {
@@ -106,6 +106,7 @@ public class UsuarioDAO {
         usuario.setNome(cursor.getString(1));
         usuario.setEmail(cursor.getString(2));
         usuario.setSenha(cursor.getString(3));
+
         return usuario;
     }
 

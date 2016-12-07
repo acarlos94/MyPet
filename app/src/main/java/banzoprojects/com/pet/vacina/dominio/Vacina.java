@@ -1,6 +1,8 @@
 package banzoprojects.com.pet.vacina.dominio;
 
 
+import banzoprojects.com.pet.animal.dominio.Animal;
+
 public class Vacina {
     private long _id;
     private String nome_vacina;
@@ -8,6 +10,7 @@ public class Vacina {
     private String local;
     private String proxima_vacina;
     private long idAnimal;
+    private Animal animal;
 
     public Vacina(){}
 
@@ -17,7 +20,8 @@ public class Vacina {
         this.data_vacina = data_vacina;
         this.local = local;
         this.proxima_vacina = proxima_vacina;
-        this.idAnimal = idAnimal;
+        this.animal = animal;
+
     }
     public Long get_id() {
 
@@ -44,4 +48,11 @@ public class Vacina {
     public void setIdAnimal(long idAnimal){this.idAnimal=idAnimal;}
 
     public long getIdAnimal(){return idAnimal;}
+
+    public Animal getAnimal() {
+        return animal;
+    }
+    public void setAnimal(Animal animal){
+            this.animal = animal;
+    }
 }

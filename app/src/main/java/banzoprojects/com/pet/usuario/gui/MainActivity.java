@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import banzoprojects.com.pet.R;
 import banzoprojects.com.pet.animal.dao.AnimalDAO;
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private Animal animal;
     private ListView listaAnimal;
     private AnimalDAO ani;
-    private String[]itens = {"Vacina","Banho", "Calendario"};
 
 
 
@@ -53,26 +51,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Sessao.setAnimal(ani.getAnimal(id));
-                String nome = Sessao.getAnimal().get_idAnimal().toString();
-                Toast.makeText(getApplicationContext(),nome, Toast.LENGTH_SHORT).show();
+                listaAnimal.getAdapter().getItemId(position);
+                Sessao.setAnimal(ani.getAnimal(id + 1));
                 Intent intent = new Intent(getApplicationContext(), OpcoesAnimalActivity.class);
                 startActivity(intent);
             }
         });
 
-//        listaAnimal.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
-//
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                Sessao.setAnimal(ani.getAnimal(id));
-//                Intent intent = new Intent(getApplicationContext(), OpcoesAnimalActivity.class);
-//                startActivity(intent);
-//
-//                return false;
-//            }
-//        });
 
         btnCadastrarAnimal.setOnClickListener(new View.OnClickListener() {
             @Override

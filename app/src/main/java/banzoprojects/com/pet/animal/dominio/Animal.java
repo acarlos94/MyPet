@@ -21,7 +21,7 @@ public class Animal {
 
 
     public Animal(Long id, String nome, String raca, String sexo, String cor, String nascimento,
-                  String peso, String altura, String tipo, Usuario usuario) {
+                  String peso, String altura, String tipo) {
         this._id = id;
         this.nome = nome;
         this.raca = raca;
