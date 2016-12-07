@@ -56,7 +56,7 @@ public class AlimentoDao {
         db.close();
         return alimento;
     }
-
+//jjddslksl
     private Alimento criarAlimento(Cursor cursor) {
         Alimento alimento = new Alimento();
         alimento.set_id(cursor.getLong(0));
