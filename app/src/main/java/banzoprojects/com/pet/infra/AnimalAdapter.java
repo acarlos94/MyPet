@@ -49,8 +49,10 @@ public class AnimalAdapter extends BaseAdapter {
         Animal a = this.animal.get(position);
         TextView textViewAnimal = (TextView)view.findViewById(R.id.tvNomeAnimal);
         TextView textViewRaça = (TextView)view.findViewById(R.id.tvRaca);
+        TextView textViewSexo = (TextView)view.findViewById(R.id.tvSexo);
+        textViewSexo.setText(a.getSexo());
         textViewAnimal.setText(a.getNome());
-        textViewRaça.setText(a.getRaca());
+        textViewRaça.setText(a.getTipo());
 
         return view;
     }

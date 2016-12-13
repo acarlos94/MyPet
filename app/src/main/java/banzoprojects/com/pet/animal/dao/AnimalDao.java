@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.infra.DbHelper;
@@ -91,7 +90,7 @@ public class AnimalDAO {
         animal.setPeso(cursor.getString(6));
         animal.setAltura(cursor.getString(7));
         animal.setTipo(cursor.getString(8));
-        animal.setUsuario(usuarioDAO.getUsuario(cursor.getLong(9)));
+//        animal.setUsuario(usuarioDAO.getUsuario(cursor.getLong(9)));
 
         return animal;
         //        request pesquisar
@@ -120,7 +119,7 @@ public class AnimalDAO {
 //        return listaAnimal;
 //    }
 
-    public  List<Animal> getAnimais(long id) {
+    public  ArrayList<Animal> getAnimais(long id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String comando = "SELECT * FROM " + DbHelper.TABELA_ANIMAL +
                 " WHERE " + DbHelper.USUARIO_ID + " LIKE ?";
@@ -128,27 +127,15 @@ public class AnimalDAO {
         String [] argumentos = {idString};
         Cursor cursor = db.rawQuery(comando, argumentos);
         ArrayList<Animal> listarAnimais = new ArrayList<>();
+
         while(cursor.moveToNext()) {
 
             Animal animais = criarAnimal(cursor);
             listarAnimais.add(animais);
         }
         cursor.close();
-        db.close();
+//        db.close();
         return listarAnimais;
     }
-
-    public static List<Animal> getAmigos(){
-        List<Animal> amigos = new ArrayList<Animal>();
-
-        for(int i = 1; i<101; i++){
-            Animal a = new Animal();
-            a.setNome("Nome "+i);
-            a.setRaca("email"+i+"@gmail.com");
-            amigos.add(a);
-        }
-        return amigos;
-    }
-
 
 }

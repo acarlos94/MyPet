@@ -15,8 +15,6 @@
 
         <TextView
             android:text="TextView"
-            android:textColor="#000"
-            android:background="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvNomeAnimal"
@@ -25,11 +23,17 @@
 
         <TextView
             android:text="TextView"
-            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvRaca"
             android:layout_weight="1" />
+        <TextView
+            android:text="TextViewSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSexo"
+            android:layout_weight="1" />
+
 
     </LinearLayout>
 
