@@ -10,16 +10,23 @@ import banzoprojects.com.pet.usuario.dominio.Usuario;
 
 
 public class UsuarioDAO {
-    private DbHelper helper;
-
+    private DbHelper dbHelper;
+    private SQLiteDatabase database;
 
     public UsuarioDAO(Context context){
 
-        helper = new DbHelper(context);
+        dbHelper = new DbHelper(context);
+    }
+
+    private SQLiteDatabase getDatabase(){
+        if(database==null){
+            database = dbHelper.getWritableDatabase();
+        }
+        return database;
     }
 
     public long inserir(Usuario usuario){
-        SQLiteDatabase db = helper.getWritableDatabase();
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         String nome = DbHelper.COLUNA_NOME;
@@ -37,8 +44,9 @@ public class UsuarioDAO {
 
         return id;
     }
+
     public Usuario getUsuario(String email, String senha) {
-        SQLiteDatabase db = helper.getReadableDatabase();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String comando = "SELECT * FROM " + DbHelper.TABELA_USUARIO +
                 " WHERE " + DbHelper.COLUNA_EMAIL + " LIKE ? AND " +
@@ -55,12 +63,12 @@ public class UsuarioDAO {
     }
 
     public Usuario getUsuario(Usuario usuario) {
-        SQLiteDatabase db = helper.getReadableDatabase();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String email = usuario.getEmail();
         String senha = usuario.getSenha();
 
-        Cursor cursor = db.query(helper.TABELA_USUARIO,new String[]{" * "}, " email=? and senha=?", new String[]{email, senha}, null, null, null);
+        Cursor cursor = db.query(dbHelper.TABELA_USUARIO,new String[]{" * "}, " email=? and senha=?", new String[]{email, senha}, null, null, null);
 
         Usuario usuarioVerificado = null;
         if  (cursor.moveToFirst()){
@@ -72,9 +80,9 @@ public class UsuarioDAO {
     }
 
     public Usuario getUsuario(String email) {
-        SQLiteDatabase db = helper.getReadableDatabase();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.query(helper.TABELA_USUARIO,new String[]{" * "}, " email=?", new String[]{email}, null, null, null);
+        Cursor cursor = db.query(dbHelper.TABELA_USUARIO,new String[]{" * "}, " email=?", new String[]{email}, null, null, null);
 
         Usuario usuario = null;
         if  (cursor.moveToFirst()){
@@ -86,9 +94,9 @@ public class UsuarioDAO {
 
     }
     public Usuario getUsuario(Long id){
-        SQLiteDatabase db = helper.getReadableDatabase();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.query(helper.TABELA_USUARIO,new String[]{" * "}, " _id=?",
+        Cursor cursor = db.query(dbHelper.TABELA_USUARIO,new String[]{" * "}, " _id=?",
                 new String[]{id.toString()}, null, null, null);
 
         Usuario usuario = null;
@@ -110,16 +118,14 @@ public class UsuarioDAO {
         return usuario;
     }
 
-//    public Usuario preencherDadosUsuario(String nome, String email, String senha) {
-//        Usuario usuario = new Usuario();
-//        usuario.setNome(nome);
-//        usuario.setEmail(email);
-//        usuario.setSenha(senha);
-//        return usuario;
-//    }
-//    public List<Usuario> lerUsuarioTudo() {
-//        List<Usuario> usuarios = new ArrayList<Usuario>;
-//        Cursor cursor = db.query(DB_TABELA, colunas, null, null, null, null, null);
+
+//    public List<Usuario> listarUsuarios() {
+//
+//        List<Usuario> usuarios = new ArrayList<>();
+//
+//        Cursor cursor = getDatabase().query(dbHelper.TABELA_USUARIO,new String[]{" * "} , dbHelper.USUARIO_ID+ " = "+ Sessao.getUsuario().get_idUsuario(), null, null, null, null);
+//
+//
 //        if  (cursor.moveToFirst()) {
 //            while(cursor.isAfterLast()) {
 //                Usuario usuario = new Usuario(cursor.getInt(0),
@@ -133,7 +139,4 @@ public class UsuarioDAO {
 //        cursor.close();
 //        return usuarios;
 //    }
-
-
-
 }

@@ -20,16 +20,17 @@
         android:id="@+id/textView5" />
 
     <Button
-        android:text="Alimentação"
+        android:text="Deletar animal"
         android:textColor="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnAlimentacao"
+        android:id="@+id/btnApagarAnimal"
         android:background="@drawable/fundo_botao"
-        android:layout_below="@+id/btnVacinas"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="12dp"
-        android:onClick="onButtonClickOpcoes"/>
+        android:onClick="onButtonClickOpcoes"
+
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Higiene"
@@ -38,10 +39,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnHigiene"
         android:background="@drawable/fundo_botao"
-        android:layout_marginTop="127dp"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentStart="true"
-        android:onClick="onButtonClickOpcoes"/>
+        android:onClick="onButtonClickOpcoes"
+
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/btnVacinas"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Vacinas"
@@ -49,11 +51,24 @@
         android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:background="@drawable/fundo_botao"
-        android:layout_marginBottom="56dp"
         android:id="@+id/btnVacinas"
         android:onClick="onButtonClickOpcoes"
-        android:layout_alignBottom="@+id/btnHigiene"
-        android:layout_alignParentStart="true"
-        />
+
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/btnAlimentacao"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Alimentação"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAlimentacao"
+        android:background="@drawable/fundo_botao"
+        android:onClick="onButtonClickOpcoes"
+
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/btnApagarAnimal"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

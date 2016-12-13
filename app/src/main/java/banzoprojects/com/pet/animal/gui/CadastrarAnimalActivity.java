@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import banzoprojects.com.pet.R;
+import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.animal.negocio.AnimalNegocio;
 import banzoprojects.com.pet.infra.GuiUtil;
 import banzoprojects.com.pet.infra.Validacao;
@@ -44,48 +45,38 @@ public class CadastrarAnimalActivity extends AppCompatActivity {
         tipoAnimal.setAdapter(adapteTipoAnimal);
 
     }
+    private Animal criarAnimal(){
+        String sexo = tipo.getSelectedItem().toString();
+        String racas = raca.getSelectedItem().toString();
+        String tipo = tipoAnimal.getSelectedItem().toString();
+        EditText nome =(EditText)findViewById(R.id.etNomeAnimal);
+        EditText cor =(EditText)findViewById(R.id.etCorAnimal);
+        EditText peso =(EditText)findViewById(R.id.etPesoAnimal);
+        EditText nascimento =(EditText)findViewById(R.id.etNascimentoAnimal);
+        EditText altura =(EditText)findViewById(R.id.etAlturaAnimal);
+        Animal animal = new Animal();
+        animal.setNome(nome.getText().toString());
+        animal.setCor(cor.getText().toString());
+        animal.setRaca(racas);
+        animal.setTipo(tipo);
+        animal.setSexo(sexo);
+        animal.setPeso(peso.getText().toString());
+        animal.setNascimento(nascimento.getText().toString());
+        animal.setAltura(altura.getText().toString());
+        return animal;
+
+    }
     public void onButtonClickSalvarAnimal(View v){
 
         if (v.getId()== R.id.btnSalvarAnimal){
-            String sexo = tipo.getSelectedItem().toString();
-            String racas = raca.getSelectedItem().toString();
-            String tipo = tipoAnimal.getSelectedItem().toString();
-            EditText nome =(EditText)findViewById(R.id.etNomeAnimal);
-//            EditText sexo =(EditText)findViewById(R.id.etSexoAnimal);
-//            EditText raca =(EditText)findViewById(R.id.etRacaAnimal);
-            EditText cor =(EditText)findViewById(R.id.etCorAnimal);
-            EditText peso =(EditText)findViewById(R.id.etPesoAnimal);
-            EditText nascimento =(EditText)findViewById(R.id.etNascimentoAnimal);
-//            EditText tipo =(EditText)findViewById(R.id.etTipo);
-            EditText altura =(EditText)findViewById(R.id.etAlturaAnimal);
-
-
-
-
-
-            String nomeAnimal = nome.getText().toString();
-//            String sexoAnimal = sexo.getText().toString();
-//            String racaAnimal = raca.getText().toString();
-            String corAnimal = cor.getText().toString();
-            String pesoAnimal = peso.getText().toString();
-            String nascimentoAnimal = nascimento.getText().toString();
-//            String tipoAnimal = tipo.getText().toString();
-            String alturaAnimal = altura.getText().toString();
-//            Usuario usuario = new Usuario();
-
-
-
-            animalNegocio.cadastrarAnimal (nomeAnimal, racas, sexo, corAnimal, nascimentoAnimal,
-                    pesoAnimal, alturaAnimal, tipo);
+            Animal animal = criarAnimal();
+            animalNegocio.cadastrarAnimal (animal);
             guiUtil.toastLong(getApplicationContext(), "Animal cadastrado");
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
 
         }
-//        else if (v.getId() == R.id.btnVoltarParaLogin){
-//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//            startActivity(intent);
-//        }
+
 
     }
 }

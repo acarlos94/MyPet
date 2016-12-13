@@ -11,15 +11,14 @@ public class Usuario {
     private String email;
     private String senha;
 
-    public Usuario(){
-
-    }
-
-//    public Usuario(Long id, String nome, String email, String senha){
-//        this._idUsuario = id;
+//    public Usuario(){}
+//    public Usuario(long _idUsuario, String nome, String email, String senha){
+//        this._idUsuario = _idUsuario;
 //        this.nome = nome;
 //        this.email = email;
 //        this.senha = senha;
+//
+//
 //    }
 
     public Long get_idUsuario() {

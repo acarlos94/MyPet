@@ -10,6 +10,7 @@ public class Animal {
     private String raca;
     private String sexo;
     private String cor;
+//    mudar atributo para Date
     private String nascimento;
     private String peso;
     private String altura;
@@ -19,23 +20,7 @@ public class Animal {
     public Animal() {
     }
 
-
-    public Animal(Long id, String nome, String raca, String sexo, String cor, String nascimento,
-                  String peso, String altura, String tipo) {
-        this._id = id;
-        this.nome = nome;
-        this.raca = raca;
-        this.sexo = sexo;
-        this.cor = cor;
-        this.nascimento = nascimento;
-        this.peso = peso;
-        this.altura = altura;
-        this.tipo = tipo;
-        this.usuario = usuario;
-    }
-
     public Long get_idAnimal() {
-
         return _id;
     }
 
@@ -78,6 +63,7 @@ public class Animal {
     public String getNascimento() {
         return nascimento;
     }
+
 
     public void setNascimento(String nascimento) {
         this.nascimento = nascimento;

@@ -41,14 +41,35 @@ public class AnimalDAO {
 
         long id = db.insert(tabela, null, values);
         db.close();
-
         return id;
     }
-
-    public Animal getAnimal(Long id) {
+    public void atualizarAnimal(Animal animal) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL, new String[]{" * "}, " _id=? ", new String[]{id.toString()}, null, null, null);
+        ContentValues values = new ContentValues();
+
+        values.put(dbHelper.COLUNA_NOME, animal.getNome());
+        values.put(dbHelper.COLUNA_RACA, animal.getRaca());
+        values.put(dbHelper.COLUNA_SEXO, animal.getSexo());
+        values.put(dbHelper.COLUNA_COR, animal.getCor());
+        values.put(dbHelper.COLUNA_NASCIMENTO, animal.getNascimento());
+        values.put(dbHelper.COLUNA_PESO, animal.getPeso());
+        values.put(dbHelper.COLUNA_ALTURA, animal.getAltura());
+        values.put(dbHelper.COLUNA_TIPO, animal.getTipo());
+
+        db.update("TABELA_ANIMAL", values,"_id = ?", new String[]{""+animal.get_idAnimal()} );
+        db.close();
+    }
+    public void deletarAnimal(Animal animal) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete("TABELA_ANIMAL","_id = "+animal.get_idAnimal(),null);
+        db.close();
+    }
+    public Animal getAnimal(Long id) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL,
+                new String[]{" * "}, " _id=? ",
+                new String[]{id.toString()}, null, null, null);
 
         Animal animal = null;
         if (cursor.moveToFirst()) {
@@ -75,46 +96,59 @@ public class AnimalDAO {
         return animal;
         //        request pesquisar
     }
-    public List<Animal> listaAnimais() {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        List<Animal> listaAnimal = new ArrayList<Animal>();
-        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL,new String[]{" * "} , dbHelper.USUARIO_ID+ " = "+ Sessao.getUsuario().get_idUsuario(), null, null, null, null);
-        if  (cursor.moveToFirst()) {
-            while(cursor.isAfterLast()) {
-                Animal animal = new Animal(cursor.getLong(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getString(7),
-                        cursor.getString(8)                        );
-                listaAnimal.add(animal);
-                cursor.moveToNext();
-            }
-        }
-        cursor.close();
-        return listaAnimal;
-    }
+//    public List<Animal> listaAnimais() {
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//        List<Animal> listaAnimal = new ArrayList<>();
+//        Cursor cursor = db.query(dbHelper.TABELA_ANIMAL,new String[]{" * "} , dbHelper.USUARIO_ID+ " = "+ Sessao.getUsuario().get_idUsuario(), null, null, null, null);
+//        if  (cursor.moveToFirst()) {
+//            while(cursor.isAfterLast()) {
+//                Animal animal = new Animal(cursor.getLong(0),
+//                        cursor.getString(1),
+//                        cursor.getString(2),
+//                        cursor.getString(3),
+//                        cursor.getString(4),
+//                        cursor.getString(5),
+//                        cursor.getString(6),
+//                        cursor.getString(7),
+//                        cursor.getString(8),
+//                        cursor.getLong(9));
+//                listaAnimal.add(animal);
+//                cursor.moveToNext();
+//            }
+//        }
+//        cursor.close();
+//        return listaAnimal;
+//    }
 
-    public ArrayList<String> getAnimais(long id) {
+    public  List<Animal> getAnimais(long id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String comando = "SELECT * FROM " + DbHelper.TABELA_ANIMAL +
                 " WHERE " + DbHelper.USUARIO_ID + " LIKE ?";
         String idString = Long.toString(id);
         String [] argumentos = {idString};
         Cursor cursor = db.rawQuery(comando, argumentos);
-        ArrayList<String> nomeAnimal = new ArrayList<String>();
-        String caminhoColuna = DbHelper.COLUNA_NOME;
-        int indexColunaCaminho = cursor.getColumnIndex(caminhoColuna);
+        ArrayList<Animal> listarAnimais = new ArrayList<>();
         while(cursor.moveToNext()) {
-            String caminho = cursor.getString(indexColunaCaminho);
-            nomeAnimal.add(caminho);
+
+            Animal animais = criarAnimal(cursor);
+            listarAnimais.add(animais);
         }
         cursor.close();
         db.close();
-        return nomeAnimal;
+        return listarAnimais;
     }
+
+    public static List<Animal> getAmigos(){
+        List<Animal> amigos = new ArrayList<Animal>();
+
+        for(int i = 1; i<101; i++){
+            Animal a = new Animal();
+            a.setNome("Nome "+i);
+            a.setRaca("email"+i+"@gmail.com");
+            amigos.add(a);
+        }
+        return amigos;
+    }
+
 
 }

@@ -21,7 +21,7 @@
         android:id="@+id/tvBemVindo"/>
 
     <ListView
-        android:id="@+id/minhalista"
+        android:id="@+id/listaAnimais"
         android:layout_width="wrap_content"
         android:background="@drawable/fundo_tela"
         android:layout_height="wrap_content"

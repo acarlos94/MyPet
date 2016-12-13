@@ -5,58 +5,67 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.List;
 
 import banzoprojects.com.pet.R;
 import banzoprojects.com.pet.animal.dao.AnimalDAO;
 import banzoprojects.com.pet.animal.dominio.Animal;
 import banzoprojects.com.pet.animal.gui.CadastrarAnimalActivity;
-import banzoprojects.com.pet.animal.gui.OpcoesAnimalActivity;
+import banzoprojects.com.pet.infra.AnimalAdapter;
 import banzoprojects.com.pet.infra.Sessao;
 import banzoprojects.com.pet.usuario.dominio.Usuario;
 
 
 public class MainActivity extends AppCompatActivity {
     private Button btnlogout, btnCadastrarAnimal;
-    private Sessao sessao;
+    private Sessao sessao = new Sessao();
     private TextView tvBemVindo;
     private Animal animal;
-    private ListView listaAnimal;
-    private AnimalDAO ani;
+    private AnimalDAO animalDAO;
 
 
-
+    ListView animaisListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ani = new AnimalDAO(this);
-        sessao = new Sessao();
-        String usuarioLogado = sessao.getUsuario().getNome();
+        long user = sessao.getUsuario().get_idUsuario();
+        animaisListView = (ListView)findViewById(R.id.listaAnimais);
+        List<Animal> listaAnimais = animalDAO.getAnimais(user);
+        AnimalAdapter adapter = new AnimalAdapter(listaAnimais,getApplicationContext());
+        animaisListView.setAdapter(adapter);
+
+
+
+
+//        String usuarioLogado = sessao.getUsuario().getNome();
+
         btnlogout = (Button) findViewById(R.id.btnLogout);
         btnCadastrarAnimal = (Button)findViewById(R.id.btnCadastrarAnimal);
-
-        listaAnimal = (ListView)findViewById(R.id.minhalista);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,ani.getAnimais(Sessao.getUsuario().get_idUsuario()));
-
-        listaAnimal.setAdapter(adapter);
-        listaAnimal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                listaAnimal.getAdapter().getItemId(position);
-                Sessao.setAnimal(ani.getAnimal(id + 1));
-                Intent intent = new Intent(getApplicationContext(), OpcoesAnimalActivity.class);
-                startActivity(intent);
-            }
-        });
+//
+//        ListView listView = (ListView)findViewById(R.id.minhalista);
+//        long idAnimal = animal.get_idAnimal();
+//        final ArrayList<Animal> animais = ani.getAnimais(Sessao.getUsuario().get_idUsuario());
+//        ArrayAdapter<Animal> adapter = new ArrayAdapter<Animal>(getApplicationContext(),
+//                android.R.layout.simple_list_item_1,
+//                android.R.id.text1, animais);
+//
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Animal animal = animais.get(position);
+//
+//                Sessao.setAnimal(animal);
+//                Intent intent = new Intent(getApplicationContext(), OpcoesAnimalActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         btnCadastrarAnimal.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         tvBemVindo = (TextView)findViewById(R.id.tvBemVindo);
-        tvBemVindo.setText(usuarioLogado);
+//        tvBemVindo.setText(usuarioLogado);
 
 
     }
